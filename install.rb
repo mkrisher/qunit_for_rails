@@ -19,3 +19,6 @@ FileUtils.cp File.dirname(__FILE__) + '/public/images/l_qunit.png', images_dir u
 FileUtils.cp File.dirname(__FILE__) + '/public/images/l_qunit.png', images_dir unless File.exists?(images_dir + "bg_secondaryNav_left.gif")
 FileUtils.cp File.dirname(__FILE__) + '/public/images/l_qunit.png', images_dir unless File.exists?(images_dir + "bg_diagonalDarkBlue.gif")
 
+# create the tests directory
+FileUtils.mkdir js_dir + 'tests'
+

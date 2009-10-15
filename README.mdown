@@ -12,6 +12,9 @@ To read more about QUnit:
 The source for this plugin is located on Github:
 [http://github.com/mkrisher/qunit_for_rails/][]
 
+The plugin can be installed using:
+`script/plugin install git://github.com/mkrisher/qunit_for_rails.git`
+
 Example
 =======
 
