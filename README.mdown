@@ -1,0 +1,53 @@
+QunitForRails
+=============
+
+QUnit for Rails provides an easy way to run JavaScript integration testing
+against production ready HTML. QUnit for Rails simply adds an overlay menu 
+at the top of an app's pages, allowing developers to run any JavaScript tests
+and view the results. 
+
+To read more about QUnit:
+[http://docs.jquery.com/QUnit][]
+
+The source for this plugin is located on Github:
+[http://github.com/mkrisher/qunit_for_rails/][]
+
+Example
+=======
+
+To include the QUnit testing overlay on your page simply add 
+<%= include_qunit %> to the head of your document layout.
+
+The QUnit overlay looks like this in the browser:
+[![](http://farm3.static.flickr.com/2603/4014493975_7c0ee9e528.jpg)](http://farm3.static.flickr.com/2603/4014493975_7c0ee9e528.jpg)
+[![](http://farm3.static.flickr.com/2464/4015257542_9e0ef15dbc.jpg)](http://farm3.static.flickr.com/2464/4015257542_9e0ef15dbc.jpg)
+
+Usage
+=====
+
+After adding the <%= include_qunit %> to the head of your document layout, you
+simply need to add some test files to the /public/stylesheets/tests directory.
+
+The tests follow a pattern such as:
+
+`
+var localtests = {
+	test_another_example : function()
+	{
+		module("Module Test");
+		test("simple passing example", function() 
+		{
+		  var value = "foo";
+		  equals( "foo", value, "We expect value to be foo" );
+		});
+	}
+};
+
+$().extend(tests, localtests);
+
+`
+
+Copyright (c) 2009 Michael Krisher, released under the MIT license
+
+[http://docs.jquery.com/QUnit]: http://docs.jquery.com/QUnit
+[http://github.com/mkrisher/qunit_for_rails/]: http://github.com/mkrisher/qunit_for_rails/
