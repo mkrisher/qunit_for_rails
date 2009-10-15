@@ -34,8 +34,7 @@ simply need to add some test files to the /public/stylesheets/tests directory.
 
 The tests follow a pattern such as:
 
-`
-var localtests = {
+`var localtests = {
 	test_another_example : function()
 	{
 		module("Module Test");
@@ -46,9 +45,7 @@ var localtests = {
 		});
 	}
 };
-
-$().extend(tests, localtests);
-`
+$().extend(tests, localtests);`
 
 
 Copyright (c) 2009 Michael Krisher, released under the MIT license
