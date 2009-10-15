@@ -14,11 +14,12 @@ FileUtils.cp File.dirname(__FILE__) + '/public/stylesheets/qunit_for_rails.css',
 
 # install all image files
 FileUtils.cp File.dirname(__FILE__) + '/public/images/l_qunit.png', images_dir unless File.exists?(images_dir + "l_qunit.png")
-FileUtils.cp File.dirname(__FILE__) + '/public/images/l_qunit.png', images_dir unless File.exists?(images_dir + "i_loading_bar.gif")
-FileUtils.cp File.dirname(__FILE__) + '/public/images/l_qunit.png', images_dir unless File.exists?(images_dir + "bg_secondaryNav_right.gif")
-FileUtils.cp File.dirname(__FILE__) + '/public/images/l_qunit.png', images_dir unless File.exists?(images_dir + "bg_secondaryNav_left.gif")
-FileUtils.cp File.dirname(__FILE__) + '/public/images/l_qunit.png', images_dir unless File.exists?(images_dir + "bg_diagonalDarkBlue.gif")
+FileUtils.cp File.dirname(__FILE__) + '/public/images/i_loading_bar.gif', images_dir unless File.exists?(images_dir + "i_loading_bar.gif")
+FileUtils.cp File.dirname(__FILE__) + '/public/images/bg_secondaryNav_right.gif', images_dir unless File.exists?(images_dir + "bg_secondaryNav_right.gif")
+FileUtils.cp File.dirname(__FILE__) + '/public/images/bg_secondaryNav_left.gif', images_dir unless File.exists?(images_dir + "bg_secondaryNav_left.gif")
+FileUtils.cp File.dirname(__FILE__) + '/public/images/bg_diagonalDarkBlue.gif', images_dir unless File.exists?(images_dir + "bg_diagonalDarkBlue.gif")
 
 # create the tests directory
 FileUtils.mkdir js_dir + 'tests'
+FileUtils.cp File.dirname(__FILE__) + '/public/javascripts/tests/test.js', js_dir + 'tests' unless File.exists?(js_dir + 'tests/' + "test.js")
 
