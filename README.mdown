@@ -30,12 +30,12 @@ Usage
 =====
 
 After adding the `<%= include_qunit %>` to the head of your document layout, you
-simply need to add some test files to the /public/stylesheets/tests directory.
+simply need to add some test files to the `/public/stylesheets/tests directory`.
 
 The tests follow a pattern such as:
 
 `var localtests = {
-	test_another_example : function()
+    test_another_example : function()
 	{
 		module("Module Test");
 		test("simple passing example", function() 
