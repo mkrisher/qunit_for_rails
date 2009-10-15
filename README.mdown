@@ -18,6 +18,14 @@ The plugin can be installed using:
 Example
 =======
 
+The QUnit for Rails plugin requires jQuery at this time. You can include 
+jQuery easily by adding to the head of your document layout:
+`<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">
+  google.load("jquery", "1.3.2");
+</script>
+`
+
 To include the QUnit testing overlay on your page simply add 
 `<%= include_qunit %>` to the head of your document layout.
 
