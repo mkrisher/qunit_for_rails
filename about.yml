@@ -1,0 +1,7 @@
+name: QUnit for Rails
+author: Michael Krisher
+version: 1.0
+description: Helper to integrate QUnit JavaScript testing into any Rails app
+url: http://github.com/mkrisher/qunit_for_rails/
+install: git@github.com:mkrisher/qunit_for_rails.git
+license: MIT
