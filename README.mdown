@@ -2,9 +2,10 @@ QunitForRails
 =============
 
 QUnit for Rails provides an easy way to run JavaScript integration testing
-against production rendered HTML. QUnit for Rails simply adds an overlay menu 
-at the top of an app's pages, allowing developers to run JavaScript tests
-and view the results. 
+against production rendered HTML using the QUnit testing framework. 
+QUnit for Rails simply adds an overlay menu at the top of an app's pages, 
+allowing developers to run JavaScript tests and view the results right in the 
+browser. 
 
 To read more about QUnit:
 [http://docs.jquery.com/QUnit][]
@@ -13,14 +14,15 @@ The source for this plugin is located on Github:
 [http://github.com/mkrisher/qunit_for_rails/][]
 
 The plugin can be installed using:
-`script/plugin install git://github.com/mkrisher/qunit_for_rails.git`
+`script/plugin install git@github.com:mkrisher/qunit_for_rails.git`
 
 Details
 =======
 
-QUnit provides an easy way for developers to write JavaScript testing and 
-run their tests against HTML output in the browser. QUnit for Rails does not 
-run via the command line, it is run in the browser against real HTML output. 
+QUnit for Rails provides an easy way for developers to write JavaScript tests 
+and run those tests against HTML output in the browser. QUnit for Rails does 
+not run via the command line, it is run in the browser against the real HTML 
+output. 
 
 QUnit for Rails provides some necessary JavaScript and CSS files and places 
 them in your app's public directory. These files simply create the overlay 
@@ -31,11 +33,16 @@ replace the file in your public/javascript directory.
 The overlay provides a number of things. First, all your JavaScript tests are 
 stored in /public/javascript/tests. Any JavaScript test added to the directory 
 will appear in a dropdown in the overlay. Simply selecting a test from the 
-dropdown runs it against the current page. 
+dropdown runs it against the current page. Or there is an option to run all 
+tests against a page. 
 
 In much the same way Rails unit testing and functional testing work, you could 
 easily create a JavaScript test for each controller and action of your app.
 
+During the plugin install process, the tests directory is created and an 
+example test file is included. Follow the test file's formatting to create 
+additional tests. 
+ 
 The plugin also provides some handy keypress functionality. For example, hiding 
 the overlay you simply give it focus and press 'h'. All keypress options are 
 shown by press '?'.
@@ -67,14 +74,14 @@ To include the QUnit testing overlay on your page simply add
 
 After adding the `<%= include_qunit %>` to the head of your document layout, 
 you simply need to add some test files to the 
-`/public/stylesheets/tests directory`.
+`/public/javascripts/tests directory`.
 
-The tests follow a pattern such as:
+The tests are written in JSON and follow a pattern such as:
 
 `var localtests = {
     test_another_example : function()
 	{
-		module("Module Test");
+		module("Module Example Tests");
 		test("simple passing example", function() 
 		{
 		  var value = "foo";
