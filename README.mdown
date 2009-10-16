@@ -2,8 +2,8 @@ QunitForRails
 =============
 
 QUnit for Rails provides an easy way to run JavaScript integration testing
-against production ready HTML. QUnit for Rails simply adds an overlay menu 
-at the top of an app's pages, allowing developers to run any JavaScript tests
+against production rendered HTML. QUnit for Rails simply adds an overlay menu 
+at the top of an app's pages, allowing developers to run JavaScript tests
 and view the results. 
 
 To read more about QUnit:
@@ -15,7 +15,40 @@ The source for this plugin is located on Github:
 The plugin can be installed using:
 `script/plugin install git://github.com/mkrisher/qunit_for_rails.git`
 
-Example
+Details
+=======
+
+QUnit provides an easy way for developers to write JavaScript testing and 
+run their tests against HTML output in the browser. QUnit for Rails does not 
+run via the command line, it is run in the browser against real HTML output. 
+
+QUnit for Rails provides some necessary JavaScript and CSS files and places 
+them in your app's public directory. These files simply create the overlay 
+menu that gets added to your pages. The plugin also provides the latest QUnit 
+file. In case you ever want to change the version of QUnit, you would simply 
+replace the file in your public/javascript directory.
+
+The overlay provides a number of things. First, all your JavaScript tests are 
+stored in /public/javascript/tests. Any JavaScript test added to the directory 
+will appear in a dropdown in the overlay. Simply selecting a test from the 
+dropdown runs it against the current page. 
+
+In much the same way Rails unit testing and functional testing work, you could 
+easily create a JavaScript test for each controller and action of your app.
+
+The plugin also provides some handy keypress functionality. For example, hiding 
+the overlay you simply give it focus and press 'h'. All keypress options are 
+shown by press '?'.
+
+The QUnit overlay looks like this in the browser:
+
+[![](http://farm3.static.flickr.com/2603/4014493975_cfc0c2af3d_o.png)](http://farm3.static.flickr.com/2603/4014493975_cfc0c2af3d_o.png)
+
+Running a test pushes the page down and reveals the test results:
+
+[![](http://farm3.static.flickr.com/2464/4015257542_d6c759682f_o.png)](http://farm3.static.flickr.com/2464/4015257542_d6c759682f_o.png)
+
+Requirements
 =======
 
 The QUnit for Rails plugin requires jQuery at this time. You can include 
@@ -26,22 +59,15 @@ jQuery easily by adding to the head of your document layout:
 </script>
 `
 
-To include the QUnit testing overlay on your page simply add 
-`<%= include_qunit %>` to the head of your document layout.
-
-The QUnit overlay looks like this in the browser:
-
-[![](http://farm3.static.flickr.com/2603/4014493975_cfc0c2af3d_o.png)](http://farm3.static.flickr.com/2603/4014493975_cfc0c2af3d_o.png)
-
-Running a test pushes the page down and reveals the test results:
-
-[![](http://farm3.static.flickr.com/2464/4015257542_d6c759682f_o.png)](http://farm3.static.flickr.com/2464/4015257542_d6c759682f_o.png)
-
 Usage
 =====
 
-After adding the `<%= include_qunit %>` to the head of your document layout, you
-simply need to add some test files to the `/public/stylesheets/tests directory`.
+To include the QUnit testing overlay on your page simply add 
+`<%= include_qunit %>` to the head of your document layout.
+
+After adding the `<%= include_qunit %>` to the head of your document layout, 
+you simply need to add some test files to the 
+`/public/stylesheets/tests directory`.
 
 The tests follow a pattern such as:
 
