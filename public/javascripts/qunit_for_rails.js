@@ -120,7 +120,7 @@ function load_js_file(filename)
 {
 	var fileref=document.createElement('script');
 	fileref.setAttribute("type","text/javascript");
-	fileref.setAttribute("src", "javascripts/tests/" + filename + "?" + Math.floor(Math.random()*11));
+	fileref.setAttribute("src", "/javascripts/tests/" + filename + "?" + Math.floor(Math.random()*11));
  	if (typeof fileref!="undefined")
   	document.getElementsByTagName("head")[0].appendChild(fileref);
 }
