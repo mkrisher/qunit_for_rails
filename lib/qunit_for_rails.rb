@@ -1,5 +1,5 @@
 module QunitForRails
-  def include_qunit
+  def include_qunit(options = { :autohide => false })
     # write to the head of application.html.erb
     # include the js and css files required, if RAILS_ENV = development
     str = "
@@ -7,6 +7,7 @@ module QunitForRails
           $list = \"#{list_tests}\";
           $list = $list.split(\",\");
           $collection = \"#{collect_tests}\";
+          $autohide = \"#{options[:autohide]}\";
       </script>
       <script type=\"text/javascript\" src=\"/javascripts/qunit.js\"></script>
       <script type=\"text/javascript\" src=\"/javascripts/qunit_for_rails.js\"></script>

@@ -76,6 +76,11 @@ if (typeof jQuery == 'undefined') {
 			$("#qunit-test-select option:contains(all)").attr("selected", true);
 			$("#qunit-test-select").change();
 		});
+		
+		if ($autohide == "true") {
+			console.log("autohide is true");
+			$('#qunit-overlay').toggle();
+		}
 	});
 }
 
