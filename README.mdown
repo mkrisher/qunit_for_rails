@@ -73,6 +73,10 @@ Usage
 To include the QUnit testing overlay on your page simply add 
 `<%= include_qunit %>` to the head of your document layout.
 
+If you would like to include qunit_for_rails but not have it show on the top 
+of the page automatically, you can hide it on load using:
+`<%= include_qunit({:autohide => true}) %>`.
+
 After adding the `<%= include_qunit %>` to the head of your document layout, 
 you simply need to add some test files to the 
 `/public/javascripts/tests directory`.
