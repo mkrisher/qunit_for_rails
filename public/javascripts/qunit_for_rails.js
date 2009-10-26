@@ -87,33 +87,35 @@ if (typeof jQuery == 'undefined') {
 function respond_to_key(e) 
 {
 	var unicode = e.keyCode? e.keyCode : e.charCode;
-	switch (unicode) {
-		case 83: case 115: 			// s keypress
-    	$('#qunit-overlay').show();
-	    break;
-	  case 72: case 104: 			// h keypress
-	  	if($("#qunit-results").height() > 0)
-				$("#qunit-results").animate({ height: "0px"}, 500 );
-			$('#qunit-overlay').hide();
-	    break;
-	 	case 191: case 47: 			// ? keypress
-	  	$('#qunit-overlay').show();
-			$('#qunit-menu').toggle();
-	    break;
-		case 65: case 97: 			// a keypress
-			$("#qunit-all-tests").click();
-	    break;
-		case 82: case 114: 			// r keypress
-			if($("#qunit-results").height() > 0) {
-				$("#qunit-results").animate({ height: "0px"}, 500 );
-			} else {
-				$('#qunit-overlay').show();
-				$("#qunit-results").animate({ height: "400px"}, 500 );
-			}
-			break;
-	  default:
-    	break;
-  }				    
+	if(document.activeElement['nodeName'] != "INPUT") {
+		switch (unicode) {
+			case 83: case 115: 			// s keypress
+	    	$('#qunit-overlay').show();
+		    break;
+		  case 72: case 104: 			// h keypress
+		  	if($("#qunit-results").height() > 0)
+					$("#qunit-results").animate({ height: "0px"}, 500 );
+				$('#qunit-overlay').hide();
+		    break;
+		 	case 191: case 47: 			// ? keypress
+		  	$('#qunit-overlay').show();
+				$('#qunit-menu').toggle();
+		    break;
+			case 65: case 97: 			// a keypress
+				$("#qunit-all-tests").click();
+		    break;
+			case 82: case 114: 			// r keypress
+				if($("#qunit-results").height() > 0) {
+					$("#qunit-results").animate({ height: "0px"}, 500 );
+				} else {
+					$('#qunit-overlay').show();
+					$("#qunit-results").animate({ height: "400px"}, 500 );
+				}
+				break;
+		  default:
+	    	break;
+	  }
+	}
 }
 
 function load_js_file(filename)
