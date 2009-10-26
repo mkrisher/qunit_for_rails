@@ -20,7 +20,7 @@ if (typeof jQuery == 'undefined') {
 	qr += "<h1 id=\"qunit-header\">Results</h1>";
 	qr += "<h2 id=\"qunit-banner\"></h2>";
 	qr += "<h2 id=\"qunit-userAgent\"></h2>";
-	qr += "<br /><img id=\"qunit-loading\" src=\"images/i_loading_bar.gif\" alt=\"loading\">";
+	qr += "<br /><img id=\"qunit-loading\" src=\"/images/i_loading_bar.gif\" alt=\"loading\">";
 	qr += "<ol id=\"qunit-tests\"></ol>";
 	qr += "</div>";
 	
@@ -78,7 +78,6 @@ if (typeof jQuery == 'undefined') {
 		});
 		
 		if ($autohide == "true") {
-			console.log("autohide is true");
 			$('#qunit-overlay').toggle();
 		}
 	});
