@@ -13,7 +13,7 @@
 			qm += "<li><b>s</b> - shows qunit overlay</li>";
 			qm += "<li><b>h</b> - hides qunit overlay</li>";
 			qm += "<li><b>a</b> - runs all tests</li>";
-			qm += "<li><b>r</b> - shows/hides results</li>";
+			qm += "<li><b>t</b> - shows/hides tests</li>";
 			qm += "</ul>";
 			qm += "</div>";
 
@@ -51,6 +51,7 @@
 		respond_to_key: function respond_to_key(e) 
 		{
 			var unicode = e.keyCode? e.keyCode : e.charCode;
+			console.log(unicode);
 			if(document.activeElement['nodeName'] != "INPUT") {
 				switch (unicode) {
 					case 83: case 115: 			// s keypress
@@ -68,7 +69,7 @@
 					case 65: case 97: 			// a keypress
 						$("#qunit-all-tests").click();
 				    break;
-					case 82: case 114: 			// r keypress
+					case 84: case 116: 			// t keypress
 						if($("#qunit-results").height() > 0) {
 							$("#qunit-results").animate({ height: "0px"}, 500 );
 						} else {
