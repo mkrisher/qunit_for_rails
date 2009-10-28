@@ -51,7 +51,6 @@
 		respond_to_key: function respond_to_key(e) 
 		{
 			var unicode = e.keyCode? e.keyCode : e.charCode;
-			console.log(unicode);
 			if(document.activeElement['nodeName'] != "INPUT") {
 				switch (unicode) {
 					case 83: case 115: 			// s keypress
