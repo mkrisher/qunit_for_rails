@@ -50,8 +50,11 @@
 		
 		respond_to_key: function respond_to_key(e) 
 		{
-			var unicode = e.keyCode? e.keyCode : e.charCode;
-			if(document.activeElement['nodeName'] != "INPUT") {
+			if (document.activeElement['nodeName'] == "INPUT" || document.activeElement['nodeName'] == "TEXTAREA") {
+				// escape if in a textfield
+			} else {
+				var unicode = e.keyCode? e.keyCode : e.charCode;
+				console.log(document.activeElement['nodeName']);
 				switch (unicode) {
 					case 83: case 115: 			// s keypress
 			    	$('#qunit-overlay').show();
