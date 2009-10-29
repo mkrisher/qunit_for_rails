@@ -135,7 +135,7 @@
 
 		$("#qunit-results").hide();
 		$("#qunit-loading").hide();
-		$("#qunit-results").animate({ height: "0px"}, 500 );
+		$("#qunit-results").animate({ height: "0px"}, 1 );
 		$('#qunit-menu').toggle();
 
 		if ($.browser.mozilla) {
