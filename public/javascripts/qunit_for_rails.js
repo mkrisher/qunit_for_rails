@@ -8,7 +8,7 @@
 			var qm = "";
 			qm += "<div id=\"qunit-menu\">";
 			qm += "<ul class=\"qunit-menu\">";
-			qm += "<li><b>Shortcuts:</b></li>";
+			qm += "<li><b>Shortcuts (shift + ):</b></li>";
 			qm += "<li><b>?</b> - shows/hides the menu</li>";
 			qm += "<li><b>s</b> - shows qunit overlay</li>";
 			qm += "<li><b>h</b> - hides qunit overlay</li>";
@@ -53,35 +53,36 @@
 			if (document.activeElement['nodeName'] == "INPUT" || document.activeElement['nodeName'] == "TEXTAREA") {
 				// escape if in a textfield
 			} else {
-				var unicode = e.keyCode? e.keyCode : e.charCode;
-				console.log(document.activeElement['nodeName']);
-				switch (unicode) {
-					case 83: case 115: 			// s keypress
-			    	$('#qunit-overlay').show();
-				    break;
-				  case 72: case 104: 			// h keypress
-				  	if($("#qunit-results").height() > 0)
-							$("#qunit-results").animate({ height: "0px"}, 500 );
-						$('#qunit-overlay').hide();
-				    break;
-				 	case 191: case 47: 			// ? keypress
-				  	$('#qunit-overlay').show();
-						$('#qunit-menu').toggle();
-				    break;
-					case 65: case 97: 			// a keypress
-						$("#qunit-all-tests").click();
-				    break;
-					case 84: case 116: 			// t keypress
-						if($("#qunit-results").height() > 0) {
-							$("#qunit-results").animate({ height: "0px"}, 500 );
-						} else {
-							$('#qunit-overlay').show();
-							$("#qunit-results").animate({ height: "400px"}, 500 );
-						}
-						break;
-				  default:
-			    	break;
-			  }
+				if (e.shiftKey) {
+					var unicode = e.keyCode? e.keyCode : e.charCode;
+					switch (unicode) {
+						case 83: case 115: 			// s keypress
+				    	$('#qunit-overlay').show();
+					    break;
+					  case 72: case 104: 			// h keypress
+					  	if($("#qunit-results").height() > 0)
+								$("#qunit-results").animate({ height: "0px"}, 500 );
+							$('#qunit-overlay').hide();
+					    break;
+					 	case 191: case 47: 			// ? keypress
+					  	$('#qunit-overlay').show();
+							$('#qunit-menu').toggle();
+					    break;
+						case 65: case 97: 			// a keypress
+							$("#qunit-all-tests").click();
+					    break;
+						case 84: case 116: 			// t keypress
+							if($("#qunit-results").height() > 0) {
+								$("#qunit-results").animate({ height: "0px"}, 500 );
+							} else {
+								$('#qunit-overlay').show();
+								$("#qunit-results").animate({ height: "400px"}, 500 );
+							}
+							break;
+					  default:
+				    	break;
+				  }
+				}
 			}
 		},
 
