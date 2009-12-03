@@ -44,8 +44,8 @@ example test file is included. Follow the test file's formatting to create
 additional tests. 
  
 The plugin also provides some handy keypress functionality. For example, hiding 
-the overlay you simply give it focus and press 'h'. All keypress options are 
-shown by press '?'.
+the overlay you simply press 'shift+h'. All keypress options are 
+shown by press 'shift+?'.
 
 The QUnit overlay looks like this in the browser:
 
