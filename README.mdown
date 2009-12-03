@@ -61,10 +61,10 @@ Requirements
 The QUnit for Rails plugin requires jQuery at this time. You can include 
 jQuery easily by adding to the head of your document layout:
 
-    &lt;script type="text/javascript" src="http://www.google.com/jsapi"></script>
-    &lt;script type="text/javascript">
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript">
         google.load("jquery", "1.3.2");
-    &lt;/script>
+    </script>
 
 
 Usage
