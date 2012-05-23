@@ -1,7 +1,7 @@
 (function(){
-	
+
 	var QUnit_For_Rails = {
-		
+
 		init: function init()
 		{
 			// define qunit menu
@@ -44,11 +44,11 @@
 			qo += "</div>";
 			qo += qr;
 			qo += "<div style='clear:both;'></div>";
-			
+
 			$("body").prepend(qo);
 		},
-		
-		respond_to_key: function respond_to_key(e) 
+
+		respond_to_key: function respond_to_key(e)
 		{
 			if (document.activeElement['nodeName'] == "INPUT" || document.activeElement['nodeName'] == "TEXTAREA") {
 				// escape if in a textfield
@@ -130,7 +130,7 @@
 		}
 	};
 
-	$(document).ready(function() 
+	$(document).ready(function()
 	{
 		QUnit_For_Rails.init();
 
@@ -170,5 +170,5 @@
 			$('#qunit-overlay').toggle();
 		}
 	});
-	
+
 })();
